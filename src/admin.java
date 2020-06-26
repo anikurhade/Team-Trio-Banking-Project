@@ -32,84 +32,84 @@ public class admin implements Authorization {
 	//Function For Authorizing Admin ....
 		boolean userAutho=false;
 			
-				public boolean acceptUser()
-					{
-				int i=0;
+		public boolean acceptUser()
+			{
+		int i=0;
+			do {
+				if(cunt==0)
+				{
+					user[0]="Trio";
+					pass[0]="admin123";
+					
+				}
+			//accept User Name
+				System.out.println("\n\n\n\t\t\t===============================================================================");
+				System.out.print("\n\t\t\t\t\t *  UserName :- ");
+				String temp_user=sc.next();
+				int k=0;
+			//check Accepted Username With Stored Username
+				if(temp_user.equals(user[i]))
+				{  
+				//if matches accept password 
+					int cnt=0;
 					do {
-						if(cunt==0)
+				//accept password
+					System.out.print("\n\t\t\t\t\t *   PassWord :-");
+					String temp_pass=sc.next();
+				//check Accepted Password With Stored Password
+					if(temp_pass.equals(pass[i]))
+					{
+				//if matches accept Final Check 
+						String Creator="Trio";
+				//accept final check
+						System.out.print("\n\t\t\t\t\t * Final Check Enter Creator Name:-");
+						String acceptCreator=sc.next();
+						if(acceptCreator.equals(Creator))
 						{
-							user[0]="Trio";
-							pass[0]="admin123";
-							
-						}
-					//accept User Name
-						System.out.println("\n\n\n\t\t\t===============================================================================");
-						System.out.print("\n\t\t\t\t\t *  UserName :- ");
-						String temp_user=sc.next();
-						int k=0;
-					//check Accepted Username With Stored Username
-						if(temp_user.equals(user[i]))
-						{  
-						//if matches accept password 
-							int cnt=0;
-							do {
-						//accept password
-							System.out.print("\n\t\t\t\t\t *   PassWord :-");
-							String temp_pass=sc.next();
-						//check Accepted Password With Stored Password
-							if(temp_pass.equals(pass[i]))
-							{
-						//if matches accept Final Check 
-								String Creator="Trio";
-						//accept final check
-								System.out.print("\n\t\t\t\t\t * Final Check Enter Creator Name:-");
-								String acceptCreator=sc.next();
-								if(acceptCreator.equals(Creator))
-								{
-						//if matches Admin Verified 
-								System.out.println("\n\t\t\t\t\t\t\tAdmin Verified ");
-								userAutho=true;
-								break;
-								}
-								else 
-								{
-						//else print Warning!!! 
-									System.out.println("\n\t\t\t\t You Missed That !! Bye Bye Have A Happy Journey To Jail !!!");
-									
-									break;
-								}
-							//end If of password check;
-							}
-						//else of Password check 
-							else
-							{
-								System.out.println("\n\t\t\t\t\t\tPassWord Invalid!!");
-								System.out.println("\n\n\n\t\t\t===============================================================================");
-								cnt++;
-							}
-						//while for checking  and entering password 3 time if incorrect;
-						}while(cnt!=3);
+				//if matches Admin Verified 
+						System.out.println("\n\t\t\t\t\t\t\tAdmin Verified ");
+						userAutho=true;
 						break;
-						//end Password check ;
 						}
-					//userName check  Else statement  	
-						else
+						else 
 						{
-							if(i>=user.length)
-							{
-								System.out.println("\n\t\t\t\t\t\t Username Not Found!!!");
-								break;
-							}
+				//else print Warning!!! 
+							System.out.println("\n\t\t\t\t You Missed That !! Bye Bye Have A Happy Journey To Jail !!!");
 							
-							else
-								{
-									System.out.println("\n\t\t\t\t\tUserName Entered Invalid ");
-								}
+							break;
 						}
-					}while(i!=user.length);
-					return userAutho;
-				//end of function 
+					//end If of password check;
 					}
+				//else of Password check 
+					else
+					{
+						System.out.println("\n\t\t\t\t\t\tPassWord Invalid!!");
+						System.out.println("\n\n\n\t\t\t===============================================================================");
+						cnt++;
+					}
+				//while for checking  and entering password 3 time if incorrect;
+				}while(cnt!=3);
+				break;
+				//end Password check ;
+				}
+			//userName check  Else statement  	
+				else
+				{
+					if(i>=user.length)
+					{
+						System.out.println("\n\t\t\t\t\t\t Username Not Found!!!");
+						break;
+					}
+					
+					else
+						{
+							System.out.println("\n\t\t\t\t\tUserName Entered Invalid ");
+						}
+				}
+			}while(i!=user.length);
+			return userAutho;
+		//end of function 
+			}
 	// function to change Username And Password;
 	public boolean changeSysUser()
 	{
